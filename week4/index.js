@@ -13,7 +13,6 @@ app.use(bodyParser.json());
 const port = 3000;
 
 // Connecting to database
-console.log(process.env.DATABASE_URL);
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
@@ -34,7 +33,8 @@ app.post("/addRecord", (req, res) => {
 
 app.get("/getRecords/:userId", async (req, res) => {
   try {
-    const transactionData = getTransactionRecord(req.params.userId);
+    const transactionData = await getTransactionRecord(req.params.userId);
+    console.log(transactionData);
     res.json({
       statusCode: 200,
       data: transactionData,
@@ -55,7 +55,6 @@ async function getTransactionRecord(userId) {
   } catch {
     trnRecord = null;
   }
-
   return trnRecord;
 }
 
