@@ -5,12 +5,12 @@ const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
-const { user, transactionData } = require("./model");
+const { transactionData } = require("./model");
 
 app.use(express.static("public"));
 app.use(bodyParser.json());
 
-const port = 3000;
+const port = process.env.PORT;
 
 // Connecting to database
 mongoose.connect(process.env.DATABASE_URL);
@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
   res.send("index.html");
 });
 
+// Add records endpoint
 app.post("/addRecord", (req, res) => {
   updateRecordsList(req?.body).then((result) => {
     res.json({
@@ -31,6 +32,7 @@ app.post("/addRecord", (req, res) => {
   });
 });
 
+// Get Records per the user endpoint
 app.get("/getRecords/:userId", async (req, res) => {
   try {
     const transactionData = await getTransactionRecord(req.params.userId);
@@ -44,10 +46,7 @@ app.get("/getRecords/:userId", async (req, res) => {
   }
 });
 
-app.get("/delete", (req, res) => {
-  //TBI
-});
-
+// Get data from the TransactionData document for the given user id
 async function getTransactionRecord(userId) {
   let trnRecord;
   try {
@@ -58,6 +57,7 @@ async function getTransactionRecord(userId) {
   return trnRecord;
 }
 
+//Update transaction details
 async function updateRecordsList(data) {
   const type = data?.type;
   const value = data?.value;
