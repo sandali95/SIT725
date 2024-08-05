@@ -2,3 +2,8 @@
 .github
 node_modules/
 .DS_Store
+Deakin-SIT725/
+SIT725/
+week4/.env
+.DS_Store
+.gitignore
