@@ -1,0 +1,63 @@
+const express = require("express");
+
+const records = require("../models/record.js");
+const counter = require("../models/counter.js");
+
+// Get data from the TransactionData document for the given user id
+const getTransactionRecord = (userId) => {
+  let trnRecord;
+  try {
+    trnRecord = records.findRecordByUserId(userId);
+  } catch {
+    trnRecord = null;
+  }
+  return trnRecord;
+};
+
+//Add a record into records list of a given user
+const addRecordAndAdjustValues = async (data) => {
+  const { userId, record } = data;
+
+  //Auto increment the record id
+  const nextRecordId = await counter.getNextSequence("recordsListRecordId");
+  record.recordId = nextRecordId;
+
+  return records.addRecordAndAdjustValues(userId, record);
+};
+
+//Add a record into records list of a given user
+const updateRecordAndAdjustValues = async (data) => {
+  const { userId, record } = data;
+  const recordRemoved = await removeRecordAndAdjustTotals(
+    userId,
+    record.recordId
+  );
+  return records.addRecordAndAdjustValues(userId, record);
+};
+
+//Remove a record from the record list of a given user
+const removeRecordAndAdjustTotals = async (userId, recordToRemoveId) => {
+  // Find the document containing the record
+  const document = await records.findRecordByUserId(userId);
+
+  if (!document) {
+    throw new Error("Transactions not found for the given user id");
+  }
+
+  // Check if the record exists in the recordsList
+  const record = document.recordsList.find(
+    (r) => r.recordId == recordToRemoveId
+  );
+
+  if (!record) {
+    throw new Error("Record not found");
+  }
+  return records.removeRecordAndAdjustTotals(userId, record);
+};
+
+module.exports = {
+  addRecordAndAdjustValues,
+  updateRecordAndAdjustValues,
+  getTransactionRecord,
+  removeRecordAndAdjustTotals,
+};

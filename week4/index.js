@@ -36,7 +36,6 @@ app.post("/addRecord", (req, res) => {
 app.get("/getRecords/:userId", async (req, res) => {
   try {
     const transactionData = await getTransactionRecord(req.params.userId);
-    console.log(transactionData);
     res.json({
       statusCode: 200,
       data: transactionData,
