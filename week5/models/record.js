@@ -2,11 +2,22 @@ const mongoose = require("mongoose");
 
 //Transaction Data Schema
 const transactionDataSchema = new mongoose.Schema({
-  userId: Number,
-  incomeTotal: Number,
-  expenseTotal: Number,
-  balanceTotal: Number,
-  recordsList: Array,
+  userId: {
+    type: Number,
+    required: true,
+  },
+  incomeTotal: {
+    type: Number,
+  },
+  expenseTotal: {
+    type: Number,
+  },
+  balanceTotal: {
+    type: Number,
+  },
+  recordsList: {
+    type: Array,
+  },
 });
 
 // Creating model objects
