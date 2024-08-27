@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Budget Planner</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <nav>
+      <div class="nav-wrapper blue-grey darken-1">
+        <a href="#" class="logo">Simple Budget Planner</a>
+        <span id="nav-mobile user-card" class="right hide-on-med-and-down">
+            <i class="material-icons user-avatar">assignment_ind</i>
+            Sandali
+      </div>
+    </nav>
+    <!--Balance Cards-->
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="card blue-grey darken-1">
+          <div
+            class="card-content white-text blue-grey darken-3"
+            style="text-align: center"
+          >
+            <span class="card-title">Your Balance</span>
+            <span class="card-title" id="balance">$000</span>
+          </div>
+          <div
+            class="card-action"
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding: 20px 50px;
+            "
+          >
+            <div class="card-action-section">
+              <div class="card-title">Income</div>
+              <div class="card-title" id="income">$0</div>
+            </div>
+            <div class="card-action-section">
+              <div class="card-title">Expense</div>
+              <div class="card-title" id="expense">$0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Records -->
+        <div class="card blue-grey darken-1" id="records">
+          <ul class="collection" id="recordsList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Records -->
+    <div id="addRecordsBtn">
+      <a
+        id="modalTrigger"
+        class="btn-floating btn-large waves-effect waves-light red"
+        href="#modal1"
+        ><i class="material-icons">add</i></a
+      >
+    </div>
+
+    <!-- Record Model-->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Add your transactions here</h4>
+        <form class="col s12">
+          <div class="row" style="display: flex">
+            <div class="input-field col s12">
+              <label>
+                <input
+                  class="with-gap blue-grey"
+                  name="transactionType"
+                  id="txType"
+                  type="radio"
+                  value="income"
+                  checked
+                />
+                <span>Income</span>
+              </label>
+            </div>
+            <div class="input-field col s12">
+              <label>
+                <input
+                  class="with-gap blue-grey"
+                  name="transactionType"
+                  id="txType2"
+                  type="radio"
+                  value="expense"
+                />
+                <span>Expense</span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <span class="material-icons prefix">$&nbsp;</span>
+              <input id="value" type="number">
+              <label for="value">Value</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="notes" type="text" />
+              <label for="notes">Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">        
+        <a
+          class="btn waves-effect waves-light modal-close blue-grey lighten-2"
+          id="cancelTransactionBtn"
+        >
+          Cancel
+        </a>
+        <a
+          class="btn waves-effect waves-light modal-close blue-grey"
+          id="addTransactionBtn"
+        >
+          Add   
+        </a>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
