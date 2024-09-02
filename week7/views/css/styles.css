@@ -1,0 +1,57 @@
+#addRecordsBtn {
+
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+}
+
+.income {
+    color: #01579b;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.title {
+    margin-left: 12px;
+}
+
+.expense {
+    color: #e53935;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.user-avatar{
+    font-size: 28px !important;
+    margin-right: 8px;
+}
+
+.nav-wrapper {
+    padding: 0 12px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#nav-mobile {
+    display: flex;
+}
+
+.card-action-section {
+    text-align: center;
+    color: white;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after{
+    background-color: #607d8b;
+    border: 2px solid #263238;
+}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: #607d8b;
+    border: 2px solid;
+} 
