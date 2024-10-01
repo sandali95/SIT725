@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Card with Video</title>
+      <link rel="stylesheet" href="styles.css">
+      <!-- <link rel="stylesheet" href="headerFooter.css"> -->
+      <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+      <style>
+        .navy-blue {
+          background-color: #2d807e !important; /* Navy blue color */
+        }
+        .white-text {
+          color: #ffffff !important; /* White text color */
+        } 
+        footer{
+          text-align: center;
+    padding: 5px;
+    background-color: #2D807E;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+        }
+
+        .card {
+  display: flex; /* Enable flexbox */
+  flex-direction: row; /* Align items horizontally */
+  justify-content: space-between; /* Distribute space between items */
+  align-items: center; /* Align items vertically center */
+  padding: 20px; /* Optional padding */
+  border: 1px solid #ddd; /* Optional border */
+  border-radius: 8px; /* Optional border radius */
+  background-color: #fff; /* Optional background color */
+}
+
+.card-item {
+  margin: 10px; /* Space between items */
+}
+
+.card-image {
+  flex: 1; /* Grow to fill available space */
+}
+
+.card-content {
+  flex: 2; /* Grow to fill twice as much space as card-image */
+}
+
+.card-image img {
+  max-width: 100%; /* Ensure the image scales within its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.card-content video {
+  width: 100%; /* Ensure the video scales within its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.bullet-points {
+      list-style: none; /* Remove default bullet points */
+      padding-left: 0; /* Remove padding */
+    }
+
+    .bullet-points li {
+      margin-bottom: 10px; /* Space between list items */
+      font-size: 16px; /* Font size */
+    }
+
+    .bullet-points li i {
+      color: #2d807e; /* Icon color */
+      margin-right: 10px; /* Space between icon and text */
+    }
+.card-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out items */
+  align-items: flex-start; /* Align items at the start of the container */
+}
+.description {
+    color: #666; /* Light gray color for descriptions */
+    font-size: 14px; /* Adjust as needed */
+    margin-top: 5px;
+}
+.content-item {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    max-width: 200px; /* Set a max-width if needed */
+}
+.content-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Ensures text inside the header is centered */
+}
+    </style>
+    </head>
+
+    <body>
+        <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+        <nav>
+            <div class="nav-wrapper navy-blue" >
+              <a href="/" class="brand-logo">PawFinders</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="galery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="findsitter.html">Find a Sitter</a></li>
+                <li><a id="viewBookingsLink" style="cursor: pointer;">View bookings</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="javascript:void(0);" id="logoutLink">Logout</a></li>
+              </ul>
+            </div>
+        </nav>
+
+        <br>
+        <div class="card">
+            <div class="card-item card-image">
+                <img src="src/logo.png" alt="Card Image">
+                <p>PawFinders - our Go-To Dog
+                   Walker Subscription Service  
+                <br>              
+                   PawFinders is all about: making sure to
+                   provide for the needs of our beloved fur babies.
+                </p>
+            </div>
+            <div class="card-item card-content">
+                <video controls>
+                    <source src="src/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="container">
+          <div class="header">
+            <h1>A sitter for every occasion</h1>
+          </div>
+          <div class="content-row">
+              <div class="content-item">
+                <i class="fas fa-bone icon"></i>
+              <p>Sitting</p>
+              <p class="description">Your sitter stays with your pet in your home. Best in show care where your pet is most comfortable.</p>
+            </div>
+              <div class="content-item">
+              <i class="fas fa-paw icon"></i>
+              <p>Day care</p>
+              <p class="description">Busy day, no problems! Leave your pet with your sitter for the day and return to a happy furbaby.</p>
+            </div>
+              <div class="content-item">
+                <i class="fas fa-home icon"></i>
+                <i class="fas fa-paw icon-overlay"></i>
+              <p>House visiting</p>
+              <p class="description">The sitter drops in to visit your pet, giving them food, water and a toilet break.</p>
+          </div>
+        </div>
+          <div class="content-row">
+              <div class="content-item">
+              <i class="fas fa-dog icon"></i>  
+                  <p>Dog walking</p>
+                  <p class="description">Pups need a workout too. Your sitter will walk them in your local area to burn off their extra energy.</p>
+              </div>
+              <div class="content-item">
+              <i class="fas fa-scissors icon"></i>    
+                  <p>Dog grooming</p>
+                  <p class="description">A perfectly coiffed canine will await you when you book with one of our groomers.</p>
+              </div>
+              <div class="content-item">
+                <i class="fas fa-heart icon"></i>
+                <i class="fas fa-dog icon-overlay"></i>
+                  <p>Hosting</p>
+                  <p class="description">Your pet stays at your sitter’s home. The purfect petcation with all the creature comforts.</p>
+              </div>
+          </div>
+      </div>
+
+            <div class="card">
+              <div class="text-content">
+                <h2>Book with peace of mind</h2>
+                <ul class="bullet-points">
+                  <li><i class="fas fa-check-circle"></i> All sitters have their identity verified, and can choose to add police checks</li>
+                  <li><i class="fas fa-check-circle"></i> Every booking is covered by Accident Cover</li>
+                  <li><i class="fas fa-check-circle"></i> Access to our customer support team</li>
+                </ul>
+                </div>
+              <div class="card">
+                <div class="card-image">
+                    <img src="src/a2.jpg" alt="Sample Photo">              
+                </div>
+              </div>
+          </div>
+          <div>
+            <h2>Entrust Your Beloved Furry Friend to a Skilled Caretaker</h2>
+          <div>
+            <div class="card-image">
+                <img src="src/a1.jpg" alt="Sample Photo">                
+            </div>
+          </div>
+      </div>
+    
+      </div>
+    </body>
+  </body>
+  <footer class="navy-blue">
+    <p>&copy; 2024 PawFinders</p>
+  </footer>
+  <script type="text/javascript" src="/js/common.js"></script>
+  </html>

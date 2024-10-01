@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PawFinders</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="css/bookingpage.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h5>PawFinders</h5>
+      <div class="right-links">
+        <ul>
+          <li><a href="/dashboard.html">Home</a></li>
+          <li><a href="galery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="findsitter.html">Find a Sitter</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="javascript:void(0);" id="logoutLink">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="cards" id="cardsContainer">
+        <!-- Cards will be injected here by JavaScript -->
+      </div>
+
+      <!-- Divider for booking history -->
+      <div class="divider">Booking History</div>
+
+      <div class="cards" id="historyContainer">
+        <!-- Booking history will be injected here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Notification popup -->
+    <div id="notification" class="notification-popup">
+      <span class="close-btn" onclick="closeNotification()">&times;</span>
+      <p>You have a notification!</p>
+    </div>
+
+    <footer class="navy-blue">
+      <p>&copy; 2024 PawFinders</p>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script
+      src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+      integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/js/bookings.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    background-color: #2D807E;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header {
+    text-align: left;
+    padding-left: 24px;
+}
+
+header > h5 {
+    margin: 0;
+}
+
+footer > p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2D807E;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+h2 {
+    color: #007B7F; /* Section title color */
+}
+
+strong {
+    color: #333;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items inline */
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.right-links {
+    position: absolute; /* Position them in the top right corner */
+    right: 24px; /* Align to the right */
+    top: 10px; /* Align to the top */
+}
+
+.right-links ul {
+    display: inline; /* Display right links inline */
+}
+
+.right-links ul li {
+    display: inline; /* Display list items inline */
+    margin-left: 20px; /* Space between right items */
+}
+
+.right-links ul li a {
+    color: white; /* Link color for right links */
+    text-decoration: none; /* Remove underline */
+}

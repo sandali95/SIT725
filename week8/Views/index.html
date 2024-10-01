@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/css/login.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="css/profile.css" />
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      .navy-blue {
+        background-color: #2d807e !important; /* Navy blue color */
+      }
+      body {
+        background-color: #f0f4f7;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .login-container {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+      }
+      .input-field .prefix {
+        color: #26a69a;
+      }
+      .btn {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #26a69a;
+      }
+      #error-message {
+        margin-top: 15px;
+      }
+      .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+      }
+      footer {
+        background-color: #004d40;
+        padding: 20px 0;
+      }
+      footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <header>
+      <h5>PawFinders</h5>
+    </header>
+
+    <div class="login-container z-depth-2">
+      <h2>PawFinders</h2>
+      <form id="loginForm">
+        <div class="input-field">
+          <i class="material-icons prefix">person</i>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="validate"
+            required
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">lock</i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="validate"
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+        <div>
+          <p>I am a ?</p>
+          <label>
+            <input name="userType" type="radio" id="dogWalker" value="WALKER" />
+            <span>Dog walker/ sitter</span>
+          </label>
+          <label>
+            <input name="userType" type="radio" id="dogOwner" value="OWNER" />
+            <span>Dog owner</span>
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="btn waves-effect waves-light teal lighten-1"
+        >
+          Login
+        </button>
+      </form>
+      <p id="error-message" class="red-text center-align"></p>
+      <div class="center-content">
+        <p>New user? <a href="signUp.html">Create an account</a></p>
+      </div>
+    </div>
+  </body>
+  <footer class="navy-blue">
+    <p>&copy; 2024 PawFinders</p>
+  </footer>
+  <script
+    src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+    integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/js/login.js"></script>
+</html>

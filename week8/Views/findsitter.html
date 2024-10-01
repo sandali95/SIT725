@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="css/styles.cssß" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="/css/search.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <style>
+        /* Fix header alignment */
+        .navy-blue {
+            background-color: #2d807e !important; /* Teal shade for navbar */
+        }
+        .white-text {
+            color: #ffffff !important; /* White text color */
+        }
+
+         /* Ensure navbar stays at the top and spans full width */
+         .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        /* Brand logo alignment */
+        .brand-logo {
+            padding-left: 10px;
+        }
+
+        /* Adjust padding for the menu items */
+        ul li a {
+            padding: 0 15px;
+        }
+
+        /* Ensure body content is centered and wide enough */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Main content width */
+        main {
+            width: 80%; /* Controls the width of the body */
+            max-width: 1200px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Remove bullet points from the navigation list */
+        .nav-wrapper ul {
+        list-style-type: none;  /* Remove default bullets */
+        margin: 0;              /* Remove any default margins */
+        padding: 0;             /* Remove default padding */
+        }   
+
+        .nav-wrapper ul li {
+        display: inline-block;  /* Make the list items align horizontally */
+        }
+
+        .nav-wrapper ul li a {
+        padding: 0 15px;        /* Add padding for space between items */
+        text-decoration: none;  /* Remove underline from links */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            background-color: #2d807e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .search-btn:hover {
+            background-color: #225f5c;
+        }
+
+        /* Footer styling */
+        footer {
+            width: 100%;
+            background-color: #2d807e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+        }
+    </style> -->
+    <style>
+      /* Fix header alignment */
+      .navy-blue {
+        background-color: #2d807e !important; /* Teal shade for navbar */
+      }
+      .white-text {
+        color: #ffffff !important; /* White text color */
+      }
+
+      /* Ensure navbar stays at the top and spans full width */
+      .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between; /* Align logo to the left and nav items to the right */
+        align-items: center; /* Center vertically */
+        padding: 20px; /* Add some padding on the sides */
+      }
+
+      /* Brand logo alignment */
+      .brand-logo {
+        font-family: "Arial", sans-serif; /* Change the font family */
+        font-size: 1.5em; /* Increase font size */
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Adjust padding for the menu items */
+      ul#nav-mobile {
+        margin: 0;
+      }
+
+      ul#nav-mobile li {
+        display: inline-block;
+      }
+
+      ul#nav-mobile li a {
+        padding: 0 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+      }
+
+      ul#nav-mobile li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+      }
+
+      /* Ensure body content is centered and wide enough */
+      body {
+        margin: 0;
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Main content width */
+      main {
+        width: 80%; /* Controls the width of the body */
+        max-width: 1200px;
+        margin-bottom: 50px; /* Ensure there's space below the fixed navbar */
+        text-align: center;
+        flex-grow: 1;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .search-bar {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+      }
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+      }
+
+      .search-btn {
+        padding: 10px 20px;
+        background-color: #2d807e;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      .search-btn:hover {
+        background-color: #225f5c;
+      }
+
+      /* Footer styling */
+      footer {
+        width: 100%;
+        background-color: #2d807e;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative; /* Make the footer fixed */
+        bottom: 0; /* Stick to the bottom */
+        height: 60px; /* Set a fixed height */
+        left: 0; /* Ensure it covers full width */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="nav-wrapper navy-blue">
+      <a href="#" class="brand-logo">PawFinders</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/dashboard.html">Home</a></li>
+        <li><a href="galery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a id="viewBookingsLink" style="cursor: pointer;">View bookings</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="javascript:void(0);" id="logoutLink">Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <main>
+      <h1>Press paws on pet stress</h1>
+      <p>Find trusted pet sitters & dog walkers near you</p>
+
+      <div class="search-bar">
+        <form method="get">
+          <input
+            type="text"
+            id="searchLocation"
+            placeholder="Suburb or address"
+            class="input-field"
+          />
+          <select class="input-field" id="searchService">
+            <option value="" disabled selected>Pet Services</option>
+            <option value="">Pet Daycare</option>
+            <option value="sitting">Pet Sitting</option>
+            <option value="walking">Dog Walking</option>
+            <!-- Add more options as needed -->
+          </select>
+          <input
+            type="date"
+            id="searchDate"
+            placeholder="Search by date"
+            class="input-field"
+          />
+          <input
+            type="number"
+            id="searchPets"
+            placeholder="Add pets"
+            class="input-field"
+          />
+          <button id="searchdogsitter" type="submit" class="search-btn">
+            Search
+          </button>
+        </form>
+      </div>
+      <div id="results"></div>
+    </main>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script src="/js/DogsitterSearch.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+  </body>
+
+  <footer class="navy-blue">
+    <p class="white-text">&copy; 2024 PawFinders</p>
+  </footer>
+</html>

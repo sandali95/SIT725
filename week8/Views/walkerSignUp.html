@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Import Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/signUp.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../public/css/styles.css"> 
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+  <title>Registration Form in Card</title>
+  <style>
+    /* Custom color styles */
+    .navy-blue {
+      background-color: #2d807e; 
+    }
+    .white-text {
+      color: #ffffff !important; 
+    }
+
+    /* Style for buttons */
+    .btn, .btn-large, .btn-flat {
+      background-color: #2d807e !important; 
+      color: #ffffff !important; 
+    }
+
+    /* Style for select dropdown arrow and input fields */
+    .select-wrapper input.select-dropdown {
+      color: #2d807e !important; /* Dropdown text color */
+      border-bottom: 1px solid #2d807e !important; /* Input field bottom border color */
+    }
+    
+    /* Style for the dropdown arrow */
+    .select-dropdown.dropdown-trigger:after {
+      border-bottom: 2px solid #2d807e !important;
+      border-right: 2px solid #2d807e !important;
+    }
+
+    /* Style for tick marks */
+    .dropdown-content li>span {
+      color: #2d807e !important; /* Dropdown item color */
+    }
+
+    /* Input field styles */
+    input:not([type]):focus:not([readonly]),
+    input[type=text]:not(.browser-default):focus:not([readonly]),
+    input[type=password]:not(.browser-default):focus:not([readonly]),
+    input[type=email]:not(.browser-default):focus:not([readonly]),
+    input[type=url]:not(.browser-default):focus:not([readonly]),
+    input[type=time]:not(.browser-default):focus:not([readonly]),
+    input[type=date]:not(.browser-default):focus:not([readonly]),
+    input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+    input[type=tel]:not(.browser-default):focus:not([readonly]),
+    input[type=number]:not(.browser-default):focus:not([readonly]),
+    input[type=search]:not(.browser-default):focus:not([readonly]),
+    textarea.materialize-textarea:focus:not([readonly]) {
+      border-bottom: 1px solid #2d807e !important; /* Focus border color */
+      box-shadow: 0 1px 0 0 #2d807e !important; /* Focus shadow color */
+    }
+
+    /* Label styles */
+    .input-field label {
+      color: #2d807e !important; /* Label color */
+    }
+
+    /* Hide file upload and 'Other' text input by default */
+    #id_upload,
+    #other_certification {
+      display: none;
+      margin-top: 20px; /* Add spacing above file input */
+    }
+
+    /* Correct spacing for all input fields */
+    .input-field {
+      margin-top: 20px;
+    }
+        /* Eye icon positioning */
+    .toggle-password {
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 1;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    background-color: #2d807e;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header {
+    text-align: left;
+    padding-left: 24px;
+}
+
+header > h5 {
+    margin: 0;
+}
+
+footer > p {
+    margin: 0;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <h5>PawFinders</h5>
+</header>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Register With Us</span>
+        <form id="registrationForm">
+          <!-- Name and Last Name -->
+          <div class="input-field">
+            <input id="first_name" type="text" class="validate" required>
+            <label for="first_name">First Name*</label>
+          </div>
+          <div class="input-field">
+            <input id="last_name" type="text" class="validate" required>
+            <label for="last_name">Last Name*</label>
+          </div>
+          
+          <!-- Phone and Email -->
+          <div class="input-field">
+            <input id="phone" type="tel" class="validate" required>
+            <label for="phone">Phone*</label>
+          </div>
+          <div class="input-field">
+            <input id="email" type="email" class="validate" required>
+            <label for="email">Email*</label>
+          </div>
+          
+          <!-- ID Proof Dropdown -->
+          <div class="input-field">
+            <select id="id_proof">
+              <option value="" disabled selected>Choose your ID Proof</option>
+              <option value="Passport">Passport</option>
+              <option value="Driver's License">Driver's License</option>
+            </select>
+            <label for="id_proof">ID Proof</label>
+          </div>
+          
+          <!-- Hidden text field for document number -->
+          <div class="input-field" id="document_number_field" style="display: none;">
+            <input type="text" id="document_number" class="validate" required>
+            <label for="document_number">Document Number</label>
+          </div>
+          
+          <div class="input-field">
+            <select id="certification">
+              <option value="" disabled selected>Choose your Certification</option>
+              <option value="Pet Care Certification">Pet Care Certification</option>
+              <option value="Animal Behavior Certification">Animal Behavior Certification</option>
+              <option value="Veterinary Technician">Veterinary Technician</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="certification">Certification</label>
+          </div>
+
+          <div class="input-field" id="other_certification">
+            <input id="other_certification_input" type="text" class="validate">
+            <label for="other_certification_input">Please Specify Your Certification</label>
+          </div>
+
+          <div class="input-field">
+            <input id="address" type="text" class="validate" required>
+            <label for="address">Address*</label>
+          </div>
+          <div class="input-field">
+            <input id="suburb" type="text" class="validate" required>
+            <label for="suburb">Suburb*</label>
+          </div>
+          <div class="input-field">
+            <input id="postal_code" type="text" class="validate" required>
+            <label for="postal_code">Postal Code*</label>
+          </div>
+
+          <div class="input-field">
+            <select multiple id="service">
+              <option value="" disabled>Choose your Services*</option>
+              <option value="Solo Walk">Solo Walk</option>
+              <option value="Pack walk">Pack walk</option>
+              <option value="Pack walk">Pack walk</option>
+            </select>
+            <label for="service">Service</label>
+          </div>
+
+          <div class="input-field" style="position: relative;">
+            <input id="password" type="password" class="validate" required>
+            <label for="password">Password*</label>
+            <i class="material-icons toggle-password" id="toggle-password">visibility_off</i>
+          </div>
+          <button id="walkerFormSubmit" class="waves-effect waves-light btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+  <footer class="navy-blue">
+    <p>&copy; 2024 PawFinders</p>
+  </footer>
+</html>
